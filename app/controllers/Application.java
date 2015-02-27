@@ -25,7 +25,7 @@ public class Application extends Controller {
         Person person= Form.form(Person.class).bindFromRequest().get();
         //Address address=new Model.Finder<>()
         person.save();
-        return redirect(routes.Application.index());
+        return redirect(controllers.routes.Application.index());
     }
 
 //    @BodyParser.Of(BodyParser.Json.class)
