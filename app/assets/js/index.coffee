@@ -15,5 +15,19 @@ $ ->
       error: (jqXHR, textStatus, errorThrown) ->
         $('body').append "AJAX Error: #{textStatus}"
       success: (data, textStatus, jqXHR) ->
-        $('body').append "Successful AJAX call: #{data.usrname}"
+        $('#info').empty().append "BatchOp: Successful AJAX call: #{data.usrname}"
+
+$ ->
+  $("#batchOp2").on "click", (event)->
+    postD={usrname: "AAAA"}
+    $.ajax
+      url: '/addPersonBatch2'
+      type: 'POST'
+      dataType: 'json'
+      #contentType:'application/json;charset=UTF-8'
+      data:postD
+      error: (jqXHR, textStatus, errorThrown) ->
+        $('body').append "AJAX Error: #{textStatus}"
+      success: (data, textStatus, jqXHR) ->
+        $('#info').empty().append "BatchOp2: Successful AJAX call: #{data.usrname}"
 

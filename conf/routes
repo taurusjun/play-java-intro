@@ -9,6 +9,8 @@ POST        /person              controllers.Application.addPerson
 
 POST        /addPersonBatch      controllers.MyApp.addPersonBatch()
 
+POST        /addPersonBatch2      controllers.MyApp.addPersonBatchWithFormData()
+
 GET         /persons             controllers.Application.getPersons()
 
 # Map static resources from the /public folder to the /assets URL path

@@ -23,17 +23,9 @@ public class Application extends Controller {
 
     public static Result addPerson(){
         Person person= Form.form(Person.class).bindFromRequest().get();
-        //Address address=new Model.Finder<>()
         person.save();
         return redirect(controllers.routes.Application.index());
     }
-
-//    @BodyParser.Of(BodyParser.Json.class)
-//    public static Result addPersonBatch(){
-//        JsonNode jsonNode=Controller.request().body().asJson();
-//        final Map<String, String[]> values = request().body().asFormUrlEncoded();
-//        return redirect(routes.Application.index());
-//    }
 
     public static Result getPersons(){
         List<Person> persons= new Model.Finder(String.class, Person.class).all();
